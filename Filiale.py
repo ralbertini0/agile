@@ -1,26 +1,19 @@
 from dataclasses import dataclass
+from Boss import *
 
 @dataclass
 class Filiale:
     mere: str
     filiale: str
+    pdg: Boss
 
-    def __init__(self, mere: str, filiale: str):
-        self.mere = mere
-        self.filiale = filiale
-
-
-    def isFiliale(self, boss1):
-        isfil = self.isfiliale(boss1)
-        return isfil
-
-    def isfiliale(self, boss1):
-        if (self.mere == boss1.entreprise):
+    def isFiliale(self, pdg):
+        if (self.mere == Boss.getEntreprise(self.pdg)):
             isfil = True
         else:
             isfil = False
         return isfil
 
-    def maisonmere(self):
-        return "ma maison mere est " + self.mere
+    def maison_mere(self):
+        return "la maison mere de " + self.filiale + " est " + self.mere
 

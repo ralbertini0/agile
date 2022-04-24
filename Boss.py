@@ -5,9 +5,9 @@ class Boss:
     nom: str
     entreprise: str
 
-    def __init__(self, nom: str, entreprise: str):
-        self.nom = nom
-        self.entreprise = entreprise
 
     def changeEntreprise(self, entr) -> str:
         return entr
+
+    def getEntreprise(self):
+        return self.entreprise

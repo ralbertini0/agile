@@ -8,25 +8,28 @@ import unittest
 #install behave
 
 boss1 = Boss("Bernard Arnault", "LVMH")
-filiale1 = Filiale("LVMH", "Louis Vuitton")
+filiale1 = Filiale("LVMH", "Louis Vuitton", boss1)
 
 class OuterTestClass(unittest.TestCase):
 
     print("start outer class")
 
     def setUp(self):
-        self.filiale2 = Filiale("LVMH", "Louis Vuitton")
         self.boss1 = Boss("Bernard Arnault", "LVMH")
+        self.filiale1 = Filiale("LVMH", "Louis Vuitton", boss1)
+
 
     def testIsFiliale(self):
-        self.assertEqual(self.filiale2.isFiliale(boss1), True)
+        self.assertEqual(self.filiale1.isFiliale(self.pdg), True)
 
     class InnerTestClass(unittest.TestCase):
-
+        def setUp(self):
+            self.boss1 = Boss("Bernard Arnault", "LVMH")
+            self.filiale1 = Filiale("LVMH", "Louis Vuitton", boss1)
         print("start inner class")
 
         def testIsFiliale(self):
-            self.assertEqual(self.filiale2.isFiliale(boss1), True)
+            self.assertEqual(self.filiale1.isFiliale(self.pdg), True)
 
     def test_inner_test_class(self):
         suite = unittest.defaultTestLoader.loadTestsFromTestCase(self.InnerTestClass)
