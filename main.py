@@ -1,6 +1,6 @@
 from dataclasses import dataclass
-from Boss import Boss
-from Filiale import Filiale
+from boss import Boss
+from filiale import Filiale
 import unittest
 
 #import biblio

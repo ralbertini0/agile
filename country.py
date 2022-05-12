@@ -1,11 +1,11 @@
 from dataclasses import dataclass
-from capital import *
+from capitale import *
 
 @dataclass
 class Country:
     nom: str
     tauxImposition: int
-    capital: Capital
+    capital: Capitale
 
 
     def getTauxImposition(self) -> int:

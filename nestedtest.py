@@ -1,6 +1,7 @@
 from dataclasses import dataclass
-from Boss import Boss
-from Filiale import Filiale
+from boss import Boss
+from filiale import Filiale
+from capitale import Capitale
 import unittest
 
 #import biblio
@@ -9,12 +10,14 @@ import unittest
 
 boss1 = Boss("Bernard Arnault", "LVMH")
 filiale1 = Filiale("LVMH", "Louis Vuitton", boss1)
+capitale1  = Capitale
 
 class OuterTestClass(unittest.TestCase):
 
     print("start outer class")
 
     def setUp(self):
+
         self.boss1 = Boss("Bernard Arnault", "LVMH")
         self.filiale1 = Filiale("LVMH", "Louis Vuitton", boss1)
 

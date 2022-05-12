@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from Boss import *
+from boss import *
 from country import *
 
 @dataclass

@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 
 @dataclass
-class Capital:
+class Capitale:
     nom: str
     country: str
 
